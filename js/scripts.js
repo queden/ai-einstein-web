@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
 
         XHR.addEventListener("load", function (event) {
             console.log(event.target.responseText)
-            document.getElementById("display").innerHTML = JSON.parse(event.target.responseText)
+            document.getElementById("display").innerHTML = JSON.parse(event.target.responseText["body"])
         });
 
         XHR.addEventListener("error", function (event) {
