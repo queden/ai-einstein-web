@@ -11,10 +11,7 @@ window.addEventListener("load", function () {
             "body": `{\"prompt\": \"${prompt}\", \"length\": 50}`
         };
 
-        document.getElementById("display").innerHTML = "prompt gotten"
-
         XHR.addEventListener("load", function (event) {
-            console.log(JSON.parse(event.target.responseText)["body"])
             document.getElementById("display").innerHTML = JSON.parse(event.target.responseText)["body"]
         });
 
@@ -37,10 +34,8 @@ window.addEventListener("load", function () {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        document.getElementById("display").innerHTML = "loading..."
-
         sendData();
 
-        document.getElementById("display").innerHTML = "sending data done"
+        document.getElementById("display").innerHTML = "loading..."
     })
 })
