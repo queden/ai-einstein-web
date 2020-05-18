@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
 
         var inputs = document.getElementById("promptForm").elements;
 
-        var prompt = inputs["prompt"]
+        var prompt = inputs["prompt"].value
 
         var data = {
             "body": `{\"prompt\": \"${prompt}\", \"length\": 50}`
