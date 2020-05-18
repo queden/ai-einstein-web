@@ -5,15 +5,11 @@ window.addEventListener("load", function () {
 
         var inputs = document.getElementById("promptForm").elements;
 
-        // var prompt = inputs["prompt"];
-
         var data = {
-            "body": "{\"prompt\": \"hello\", \"length\": \"50\"}"
+            "body": "{\"prompt\": \"hello\", \"length\": 50}"
         };
 
         document.getElementById("display").innerHTML = "prompt gotten"
-
-        // const FD = new FormData(data);
 
         XHR.addEventListener("load", function (event) {
             document.getElementById("display").innerHTML = JSON.parse(event.target.responseText)
@@ -23,7 +19,10 @@ window.addEventListener("load", function () {
             document.getElementById("display").innerHTML = "error";
         });
 
-        XHR.open("POST", "https://tayrkn1vpc.execute-api.us-east-2.amazonaws.com/beta/");
+
+        url = "https://tayrkn1vpc.execute-api.us-east-2.amazonaws.com/beta"
+
+        XHR.open("POST", url);
 
         XHR.setRequestHeader("Content-Type", "application/json");
 
