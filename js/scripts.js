@@ -5,8 +5,10 @@ window.addEventListener("load", function () {
 
         var inputs = document.getElementById("promptForm").elements;
 
+        var prompt = inputs["prompt"]
+
         var data = {
-            "body": "{\"prompt\": \"hello\", \"length\": 50}"
+            "body": `{\"prompt\": \"${prompt}\", \"length\": 50}`
         };
 
         document.getElementById("display").innerHTML = "prompt gotten"
