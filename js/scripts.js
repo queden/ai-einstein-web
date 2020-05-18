@@ -14,6 +14,7 @@ window.addEventListener("load", function () {
         document.getElementById("display").innerHTML = "prompt gotten"
 
         XHR.addEventListener("load", function (event) {
+            console.log(event.target.responseText)
             document.getElementById("display").innerHTML = JSON.parse(event.target.responseText)
         });
 
